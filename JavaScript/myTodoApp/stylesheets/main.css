@@ -1,0 +1,94 @@
+* {
+  background: none;
+  padding: 0%;
+  margin: 0%;
+  border: none;
+}
+
+::placeholder {
+  color: #aaa;
+}
+
+.container {
+  background: #555;
+  margin: 3em auto;
+  width: 70%;
+  color: #f5f5dc;
+  padding: 0.5em 1em;
+}
+
+.container > h1 {
+  text-align: center;
+  font-size: 3em;
+}
+
+.todos {
+  width: 80%;
+  margin: 1em auto;
+}
+
+.todos > ul > li {
+  padding: 0.4em;
+  margin: 0.2em;
+  background: #aaa;
+  list-style-type: none;
+  color: #333;
+  display: flex;
+}
+
+.todos > ul > li > span {
+  flex-basis: 70%;
+}
+
+.todos > ul > li > input {
+  flex-basis: 70%;
+  border: 2px solid black;
+  border-radius: 6px;
+}
+
+.todos > ul > li > button {
+  flex-basis: 10%;
+  background: #666;
+  margin: 3px;
+  padding: 0.2em;
+  border-radius: 4px;
+}
+
+.addTodo {
+  width: 75%;
+  margin: 0.3em auto;
+}
+
+.addTodo > button {
+  background: #aaa;
+  margin: 1em auto;
+  padding: 0.4em;
+  border-radius: 4px;
+  display: flex;
+}
+
+.inputArea {
+  display: none;
+}
+
+.inputArea > input[type="text"] {
+  flex-basis: 80%;
+  border: solid 2px rgb(54, 53, 53);
+  margin: 0.3em;
+  padding: 0.3em;
+  border-radius: 4px;
+}
+
+.inputArea > input[type="text"]:focus {
+  border: solid 2px rgb(54, 53, 53);
+  background: #ccc;
+  color: #333;
+}
+
+.inputArea > input[type="button"] {
+  flex-basis: 20%;
+  background: #aaa;
+  margin: 0.3em;
+  padding: 0.4em;
+  border-radius: 4px;
+}

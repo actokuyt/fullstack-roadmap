@@ -1,0 +1,166 @@
+* {
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+a{
+  cursor: pointer;
+}
+
+.body {
+  background: url("./Background.png");
+}
+
+.navbar {
+  display: flex;
+}
+
+.logoText {
+  color: #ffffff;
+  flex-basis: 40%;
+  padding: 1em;
+  font-size: 1.5em;
+}
+
+.navbarLinks {
+  color: #ffffff;
+  flex-basis: 60%;
+  padding-left: 10em;
+  padding-top: 1em;
+  font-size: 1em;
+}
+
+.navbarLinks > a {
+  padding: 1em;
+}
+
+.banner {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.banner > h1 {
+  color: #ff7575;
+  padding-bottom: 0.5em;
+}
+
+.banner > p {
+  color: #ffffff;
+  padding-bottom: 0.5em;
+}
+
+.banner > img {
+  width: 130px;
+  height: 160px;
+  padding-bottom: 0.5em;
+}
+
+hr {
+  border: 1px solid #4d4d4d;
+}
+
+.categoryListing{
+    display: flex;
+}
+
+.displayStyle{
+    flex-basis: 12%;
+    padding: .3em 1em;
+}
+
+.displayStyle > img {
+    padding-left: .4em ;
+    width: .8em;
+    height: .8em;
+}
+
+.categoryOptions{
+    flex-basis: 88%;
+    color: #909090;
+    padding-top: .3em;
+}
+
+.categoryOptions > a{
+    padding-left: 1em;
+}
+
+.articlesListings{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    width: 90%;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+}
+
+.article{
+    padding: .5em;
+    margin: .5em;
+    background-color: #ffffff;
+    border-radius: 20px;
+    font-size: 1em;
+    position: relative;
+
+}
+
+.article > img {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.article > h6 {
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+.article > p {
+    font-size: .8em;
+    margin-bottom: 1em;
+}
+
+.article > p:nth-child(2) {
+    position: relative;
+    bottom: 1em;
+}
+
+.article > p > span {
+    margin: 1em;
+}
+
+.pagination{
+  color: #ffffff;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 2em;
+}
+
+.pagination > ul >li{
+  display: inline;
+  margin: .5em;
+}
+
+.pagination > ul > li:nth-child(3){
+  color: #ff7575;
+  border-top: 3px solid #ff7575;
+  font-size: 2em;
+  padding: 0 .5em ;
+}
+
+.footer{
+  padding: 1em;
+  color: #ffffff;
+  display: flex;
+}
+
+.copyright{
+  flex-basis: 40%;
+}
+
+.socials{
+  flex-basis: 60%;
+  text-align: right;
+}

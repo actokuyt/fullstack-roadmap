@@ -1,0 +1,63 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+	display: inline-block;
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	width: 20em;
+	height: 20em;
+	margin: auto;
+	background-color: #333;
+	transform: translateX(-50%);
+}
+
+.circleOne{
+	background: #aa3333;
+	position: absolute;
+	top: 35%;
+	left: 20%;
+	width: 30%;
+	height: 30%;
+	border-radius: 50%;
+}
+
+.circleTwo{
+	background: #5555aa;
+	position: absolute;
+	top: 35%;
+	right: 20%;
+	width: 30%;
+	height: 30%;
+	border-radius: 50%;
+}
+
+.moveRight{
+	z-index: 10;
+	animation-name: moveRight;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+}
+
+@keyframes moveRight {
+	0%{left: 20%;}
+	100%{left: 50%;}
+}
+
+
+.moveLeft{
+	z-index: 20;
+	animation-name: moveLeft;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+}
+
+@keyframes moveLeft {
+	0%{right: 20%;}
+	100%{right: 50%;}
+}

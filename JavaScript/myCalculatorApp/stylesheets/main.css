@@ -1,0 +1,115 @@
+*{
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    background: #333;
+    color: beige;
+    width: 80%;
+    margin: 1em auto;
+    padding: 1em;
+}
+
+.container > h1{
+    text-align: center;
+    padding: .5em;
+}
+
+.calculator{
+    background: cornflowerblue;
+    width: 60%;
+    padding: 1em;
+    margin: .5em auto;
+}
+
+.screen{
+    background: cornsilk;
+    width: 80%;
+    height: 4em;
+    margin: 2em auto;
+}
+
+.screen > span {
+    color: black;
+    display: block;
+    width: 100%;
+    text-align: end;
+    font-size: 3em;
+}
+
+.buttons{
+    width: 70%;
+    margin: .5em auto;
+    display: flex;
+    display: grid;
+    gap: .5em;
+}
+
+.numberBtns {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: .5em;
+}
+
+.numberBtns > button{
+    background: cornsilk;
+    width: 1.3em;
+    height: 1.3em;
+    font-size: 3em;
+}
+
+.operatorBtns {
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    gap: .5em;
+}
+
+.operatorBtns > button{
+    background: cornsilk;
+    width: 1.3em;
+    height: 1.3em;
+    font-size: 3em;
+}
+
+.decimalZeroEquals{
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: .5em;
+}
+
+.decimalZeroEquals > button {
+    background: cornsilk;
+    width: 1.3em;
+    height: 1.3em;
+    font-size: 3em;
+}
+
+.clearScreenBtn{
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+
+.clearScreenBtn > button {
+    background: cornsilk;
+    width: 97%;
+    height: 3em;
+    font-size: 1.5em;
+}

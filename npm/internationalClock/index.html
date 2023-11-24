@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>International Clock</title>
+    <link rel="stylesheet" href="./stylesheets/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="clock" class="clock">
+        <button class="timeZoneBtn" data-micromodal-trigger="modal-1">Update City</button>
+        <h4></h4>
+        <time></time>
+        <h2>
+          <time></time>
+        </h2>
+      </div>
+    </div>
+
+
+
+
+    <!-- Micromodal -->
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+          <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <header class="modal__header">
+              <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+            </header>
+            <main class="modal__content" id="modal-1-content">
+              <input id="city" class="timeZoneSelector" placeholder="City Name" type="text">
+              <br>
+              <input id="cityNameSubmitBtn" type="submit" value="Submit" class="modal__btn modal__btn-primary"">
+            </main>
+          </div>
+        </div>
+      </div>
+
+    <script src="./node_modules/micromodal/dist/micromodal.min.js"></script>
+    <script src="./node_modules/dayjs/dayjs.min.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
