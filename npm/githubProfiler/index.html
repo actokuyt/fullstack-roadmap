@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Profiler</title>
+    <link rel="stylesheet" href="./stylesheets/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Input for entering GitHub username -->
+      <input id="userInput" type="text" placeholder="GitHub User" value="" />
+
+      <!-- Button to trigger the GitHub user search -->
+      <button id="searchBtn">Search</button>
+
+      <!-- Container for displaying user information -->
+      <div class="info">
+        <!-- List for displaying user details -->
+        <ul id="infoList"></ul>
+
+        <!-- Container for displaying error messages -->
+        <div id="errorContainer" class="error-container"></div>
+      </div>
+    </div>
+
+    <!-- JavaScript module for handling GitHub API requests -->
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>

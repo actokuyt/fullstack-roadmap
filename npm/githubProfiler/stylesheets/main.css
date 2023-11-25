@@ -1,0 +1,61 @@
+/* Apply a global reset for margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a black background for the body */
+body {
+  background: black;
+}
+
+/* Styling for the main container */
+.container {
+  background: white;
+  border: 3px solid rgb(50, 47, 47);
+  border-radius: 9px;
+  width: 70vw;
+  margin: 1em auto;
+  padding: 4em 1em;
+}
+
+/* Styling for input within the container */
+.container > input {
+  display: block;
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 60%;
+  margin: 0.5em auto;
+  padding: 0.5em;
+}
+
+/* Styling for button within the container */
+.container > button {
+  display: block;
+  background: rgb(51, 119, 51);
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 20%;
+  margin: 0.5em auto;
+  padding: 0.5em;
+}
+
+/* Styling for the information container */
+.info {
+  width: 90%;
+  margin: auto;
+}
+
+/* Styling for list items within the information container */
+.info > ul > li {
+  list-style: none;
+  padding: 0.5em;
+}
+
+/* Styling for spans within list items */
+.info > ul > li > span {
+  background-color: rgb(99, 138, 172);
+  padding: 0.2em;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
