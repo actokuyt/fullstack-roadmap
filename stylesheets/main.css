@@ -1,0 +1,31 @@
+*{
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    font-size: 2em;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: .2em;
+}
+
+.container{
+    background-color: #333;
+    padding: 2em 1em;
+    width: 70vw;
+    margin: 1em auto;
+}
+
+.container > h1{
+    text-align: center;
+    color: aqua;
+    margin: 1em auto;
+}
+
+.links{
+    background-color: aqua;
+
+}
