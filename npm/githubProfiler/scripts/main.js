@@ -3,7 +3,7 @@ import { Octokit } from "https://esm.sh/octokit";
 
 // Create an instance of Octokit with authentication token
 const octokit = new Octokit({
-  auth: "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",
+  auth: "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",
 });
 
 // Get the search button element
