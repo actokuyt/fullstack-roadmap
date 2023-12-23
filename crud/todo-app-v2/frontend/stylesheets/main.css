@@ -35,9 +35,23 @@ body {
     border-bottom: 1px solid #ccc;
   }
 
-  .todoItem input[type="checkbox"] {
-    margin-right: 10px;
+  .completed {
+    text-decoration: line-through;
   }
+
+  .todoItem span{
+    flex-basis: 70%;
+    margin: 0 .5em;
+  }
+
+  .todoItem button{
+    flex-basis: 10%;
+    margin: 0 .5em;
+  }
+
+  /* .todoItem input[type="checkbox"] {
+    margin-right: 10px;
+  } */
 
   .addTodo {
     display: flex;
