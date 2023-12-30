@@ -30,19 +30,19 @@ async function completeTodo(id) {
     const response = await axios.put(`${API_URL}/${id}`);
     return response;
   } catch (error) {
-    console.error("Error completing todo:", error);
+    console.error("Error modifying todo:", error);
   }
 }
 
-// async function updateTodo(id, newText) {
-//   try {
-//     const response = await axios.put(`${API_URL}/${id}`, { text: newText });
-//     return response.data;
-//   } catch (error) {
-//     console.error("Error updating todo:", error);
-//     throw error;
-//   }
-// }
+async function editTodo(id, newText) {
+  try {
+    const response = await axios.put(`${API_URL}/${id}`, { text: newText });
+    return response.data;
+  } catch (error) {
+    console.error("Error updating todo:", error);
+    throw error;
+  }
+}
 
 async function deleteTodo(id) {
   try {
@@ -53,4 +53,4 @@ async function deleteTodo(id) {
   }
 }
 
-export { fetchTodos, deleteTodo, completeTodo, addTodoItem };
+export { fetchTodos, deleteTodo, completeTodo, addTodoItem, editTodo };

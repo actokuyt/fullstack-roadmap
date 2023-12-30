@@ -1,4 +1,10 @@
-import { deleteTodo, fetchTodos, completeTodo, addTodoItem } from "./todoservice.js";
+import {
+  deleteTodo,
+  fetchTodos,
+  completeTodo,
+  addTodoItem,
+  editTodo,
+} from "./todoservice.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Attach event listeners to dynamically created elements
@@ -31,22 +37,30 @@ async function displayTodosInUI() {
     todoItem.className = "todoItem";
     todoItem.setAttribute("id", `${todo.id}`);
 
-    // const checkbox = document.createElement("input");
-    // checkbox.type = "checkbox";
-
     const todoText = document.createElement("span");
     todoText.textContent = todo.text;
+    if (todo.completed === true) {
+      todoText.classList.add("completed");
+    }
 
     const completeButton = document.createElement("button");
     completeButton.textContent = "complete";
     completeButton.setAttribute("id", "completeBtn");
+    if (todo.completed === true) {
+      completeButton.textContent = "uncompleted";
+    }
+
+    const editButton = document.createElement("button");
+    editButton.textContent = "edit";
+    editButton.setAttribute("id", "editBtn");
 
     const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
+    deleteButton.textContent = "delete";
     deleteButton.setAttribute("id", "deleteBtn");
 
     todoItem.appendChild(todoText);
     todoItem.appendChild(completeButton);
+    todoItem.appendChild(editButton);
     todoItem.appendChild(deleteButton);
 
     todoList.appendChild(todoItem);
@@ -105,28 +119,31 @@ async function handleButtonClick(event) {
     const parentId = event.target.parentNode.id;
     let response;
 
-    try{
+    try {
       response = await completeTodo(parentId);
-      if (response.status === 200) {
+      if (response.data.completed === true) {
         todoText.classList.add("completed");
+        target.textContent = "uncompleted";
       } else {
-        console.error("Error completing todo:", response.statusText);
+        todoText.classList.remove("completed");
+        target.textContent = "complete";
       }
-    } catch (error) {
-      console.log("error completing todo");
+    } catch {
+      console.log("error uncompleting todo");
     }
   }
 
   // Check if the clicked element is an "Edit" button
-  if (target.classList.contains("edit-button")) {
-    const todoId = target.dataset.id;
+  if (target.id === "editBtn") {
+    const parentId = event.target.parentNode.id;
     const newText = prompt("Enter the new text for the todo:");
+    const parent = event.target.parentNode;
+    const todoText = parent.children[0];
 
     if (newText !== null) {
       try {
-        const updatedTodo = await updateTodo(todoId, newText);
-        // Update the UI to reflect the changes
-        updateTodoInUI(updatedTodo);
+        const updatedTodo = await editTodo(parentId, newText);
+        todoText.textContent = updatedTodo.text;
       } catch (error) {
         // Handle errors, e.g., display an error message to the user
         console.error("Error updating todo:", error);
@@ -140,9 +157,6 @@ function createTodoItem(id, text) {
   todoItem.className = "todoItem";
   todoItem.setAttribute("id", `${id}`);
 
-  // const checkbox = document.createElement("input");
-  // checkbox.type = "checkbox";
-
   const todoText = document.createElement("span");
   todoText.textContent = text;
 
@@ -150,18 +164,18 @@ function createTodoItem(id, text) {
   completeButton.textContent = "complete";
   completeButton.setAttribute("id", "completeBtn");
 
+  const editButton = document.createElement("button");
+  editButton.textContent = "edit";
+  editButton.setAttribute("id", "editBtn");
+
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
   deleteButton.setAttribute("id", "deleteBtn");
 
   todoItem.appendChild(todoText);
   todoItem.appendChild(completeButton);
+  todoItem.appendChild(editButton);
   todoItem.appendChild(deleteButton);
 
   return todoItem;
-}
-
-function updateTodoInUI(updatedTodo) {
-  // Implement logic to update the UI with the modified todo
-  // This might involve finding the todo element in the DOM and updating its text
 }
