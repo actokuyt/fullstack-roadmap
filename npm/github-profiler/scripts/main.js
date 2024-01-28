@@ -1,11 +1,3 @@
-// Import the Octokit module from the CDN
-import { Octokit } from "https://esm.sh/octokit";
-
-// Create an instance of Octokit with authentication token
-const octokit = new Octokit({
-  auth: "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",
-});
-
 // Get the search button element
 const searchBtn = document.getElementById("searchBtn");
 
@@ -17,13 +9,20 @@ searchBtn.addEventListener("click", async () => {
 
   // Get the infoList element to display user information
   const infoList = document.getElementById("infoList");
+  const payload = {
+    user_name: userName,
+  };
+
+  const jsonData = JSON.stringify(payload);
+
+  console.log(jsonData)
 
   try {
-    // Make a request to GitHub API to get user information
-    const response = await octokit.request("GET /users/{username}", {
-      username: `${userName}`,
+    // Make a request to backend to get user information
+    const response = await axios.post("https://backend-service-h1x1.onrender.com/github-profiler", jsonData, {
       headers: {
         "X-GitHub-Api-Version": "2022-11-28",
+        "Content-Type": "application/json"
       },
     });
 
