@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/todos";
+const API_URL = "https://backend-service-h1x1.onrender.com/todos";
 
 async function fetchTodos() {
   try {
