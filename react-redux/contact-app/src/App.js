@@ -27,7 +27,7 @@ const store = createStore(reducer);
 function App() {
   return (
     <Provider store={store}>
-      <div className='w-2/5 min-h-96 p-8 mt-16 m-auto bg-slate-300 rounded-2xl' >
+      <div className='w-4/5 min-h-96  mt-16  bg-slate-300 rounded-2xl lg:w-2/5 m-auto' >
         <Header />
         <AddPersonForm />
         <PeopleList />

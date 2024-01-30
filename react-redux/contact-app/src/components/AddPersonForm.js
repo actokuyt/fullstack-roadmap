@@ -17,12 +17,12 @@ function AddPersonForm(props) {
     e.preventDefault();
   }
   return (
-    <form className='mx-4 mb-4' onSubmit={handleSubmit}>
-      <input className='mx-4' type="text" 
+    <form className='mx-1 mb-4' onSubmit={handleSubmit}>
+      <input type="text" 
         placeholder="Add new contact" 
         onChange={handleChange} 
         value={person} />
-      <button type="submit">Add</button>
+      <button className='mx-4'  type="submit">Add</button>
     </form>
   );
 }
