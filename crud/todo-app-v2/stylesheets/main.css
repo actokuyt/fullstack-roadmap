@@ -49,10 +49,6 @@ body {
     margin: 0 .5em;
   }
 
-  /* .todoItem input[type="checkbox"] {
-    margin-right: 10px;
-  } */
-
   .addTodo {
     display: flex;
     margin-top: 20px;

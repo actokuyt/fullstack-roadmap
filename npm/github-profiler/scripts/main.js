@@ -15,7 +15,6 @@ searchBtn.addEventListener("click", async () => {
 
   const jsonData = JSON.stringify(payload);
 
-  console.log(jsonData)
 
   try {
     // Make a request to backend to get user information
